@@ -1,0 +1,59 @@
+
+{
+  "extensionName": {
+    "message": "Media URL Timestamper",
+    "description": "Name of the extension."
+  },
+  "extensionDescription": {
+    "message": "Resume media content where you left off by timestamping the URL.",
+    "description": "Description of the extension."
+  },
+  "tooltip_automaticMode": {
+    "message": "Automatic timestamp"
+  },
+  "tooltip_manualMode": {
+    "message": "Manual timestamp"
+  },
+  "menu_updateTimestamp": {
+    "message": "Update timestamp"
+  },
+  "menu_clearTimestamp": {
+    "message": "Clear timestamp"
+  },
+  "menu_toggleAuto": {
+    "message": "Toggle automatic mode"
+  },
+  "menu_showOptions": {
+    "message": "Options"
+  },
+  "options_showPageAction": {
+    "message": "Show page action"
+  },
+  "options_automaticTimestamp": {
+    "message": "Automatic mode enabled globally by default"
+  },
+  "options_minimumDurationMin": {
+    "message": "Minimum duration:"
+  },
+  "options_pollIntervalSec": {
+    "message": "Update interval:"
+  },
+  "options_ignoreStartSec": {
+    "message": "Ignore start:"
+  },
+  "options_ignoreEndSec": {
+    "message": "Ignore end:"
+  },
+  "options_seconds": {
+    "message": "seconds"
+  },
+  "options_minutes": {
+    "message": "minutes"
+  },
+  "options_dialog_restoreDefaults": {
+    "message": "Restore defaults?"
+  },
+  "options_btndefault": {
+    "message": "Defaults"
+  }
+}
