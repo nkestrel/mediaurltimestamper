@@ -23,8 +23,8 @@ you to clear cookies, browse logged out or with watch history disabled, as
 well as permanently store and share the timestamped links.
 
 Automatic mode applies the current timestamp every interval (default 60 
-seconds) for media content that exceeds the minimum duration (default 5 
-minutes) and the current time is not close to the start or end (default 60 
+seconds) for media content that exceeds the minimum duration (default 10 
+minutes) and the current time is not close to the start or end (default 120 
 seconds). Alternatively the timestamp can be applied manually by clicking the 
 page action icon in the location bar. The page action has a context menu 
 available in Firefox 53+ which allows clearing the timestamp and temporarily 

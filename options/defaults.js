@@ -3,8 +3,8 @@
 var defaultOptions = {
   "showPageAction":              true,
   "automaticTimestamp":          true,
-  "minimumDurationMin":          "5",
+  "minimumDurationMin":          "10",
   "pollIntervalSec":             60,
-  "ignoreStartSec":              60,
-  "ignoreEndSec":                60
+  "ignoreStartSec":              120,
+  "ignoreEndSec":                120
 };
