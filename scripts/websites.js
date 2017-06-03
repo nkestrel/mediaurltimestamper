@@ -47,15 +47,31 @@ const websites = {
       parameter: "t",
       format: "hms"
     }],
+    adPlayingOrLive: function() {
+      let panel = document.getElementsByClassName("playControlsPanel")[0];
+      if (panel &&
+          panel.classList.contains("is-visible") &&
+          panel.classList.contains("is-active")) {
+        if (panel.getElementsByClassName("playControlsPanel__adHeader")[0]) {
+          return true;
+        }
+      }
+      return false;
+    },
     getTimeAndDuration: function() {
       let result = {};
-      // Location path must match audio being played, use badge avatar path to match up
-      let avatar = document.getElementsByClassName("playbackSoundBadge__avatar")[0];
-      if (avatar && avatar.pathname == window.location.pathname) {
-        let timeString = getTimeString(document, "playbackTimeline__timePassed");
-        let durationString = getTimeString(document, "playbackTimeline__duration");
-        result.timeSec = convertTimeStringToSec(timeString);
-        result.durationSec = convertTimeStringToSec(durationString);
+      // Location path must match audio being played, use badge title path to match up
+      let playback = document.getElementsByClassName("playbackSoundBadge__title")[0];
+      if (playback) {
+        let searchParams = new URLSearchParams(playback.search);
+        let inPath = "/" + searchParams.get("in");
+        if (window.location.pathname == playback.pathname ||
+            window.location.pathname == inPath) {
+          let timeString = getTimeString(document, "playbackTimeline__timePassed");
+          let durationString = getTimeString(document, "playbackTimeline__duration");
+          result.timeSec = convertTimeStringToSec(timeString);
+          result.durationSec = convertTimeStringToSec(durationString);
+        }
       }
       return result;
     }
