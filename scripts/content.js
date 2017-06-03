@@ -18,6 +18,7 @@ var options,
     automaticMode,
     updateTimer,
     locationChangeTimer,
+    locationChanged,
     frameWindow,
     prevAutoZone;
 
@@ -35,6 +36,7 @@ function setupOptions() {
       checkMethodAvailable();
       updatePageAction();
       currentLocation = window.location.href;
+      locationChanged = true;
     }
   }, LOCATION_CHANGE_INTERVAL_MS);
 
@@ -93,10 +95,11 @@ window.addEventListener("message", function(event) {
         updateTimestamp(timeString);
       }
       // Clear timestamp when transitioning into start/end ignore regions
-      if (!autoZone && prevAutoZone) {
+      if (!locationChanged && !autoZone && prevAutoZone) {
         updateTimestamp("");
       }
       prevAutoZone = autoZone;
+      locationChanged = false;
       break;
     case "mediaFrame":
       frameWindow = event.source;
