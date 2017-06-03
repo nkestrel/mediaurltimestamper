@@ -12,16 +12,8 @@ This timestamped URL, also known as a deep link, can then be handled by the
 browser's session, history, bookmarks, sync service, share services etc. 
 Anywhere the link goes the timestamp conveniently goes with it.
 
-Supported websites (HTML5):
-
-* Youtube
-* Soundcloud
-* Vimeo
-* Twitch
-* Vidme
-* DailyMotion
-* PBS
-* BBC iPlayer
+**Supported websites (HTML5)**: Youtube, Soundcloud, Vimeo, Twitch, Vidme, 
+DailyMotion, PBS, BBC iPlayer, Hearthis.at
 
 Some of these websites already have resume capabilities but require cookies 
 or local storage to be retained. Some also need you to be logged in with 

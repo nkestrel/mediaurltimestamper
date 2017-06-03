@@ -127,5 +127,32 @@ const websites = {
     adPlayingOrLive: function() {
       return document.getElementsByClassName("trailer").length > 0;
     }
+  },
+  hearthis: {
+    domain: "hearthis.at",
+    methods: [{
+      paths: ["/"],
+      type: "hash",
+      parameter: "t",
+      format: "seconds"
+    }],
+    getTimeAndDuration: function() {
+      let result = {};
+      // Location path must match audio being played, use micro player path to match up
+      let microPlayer = document.getElementsByClassName("micro-player")[0];
+      if (microPlayer) {
+        let current = microPlayer.getElementsByClassName("gotocurrent")[0];
+        if (current && current.pathname == window.location.pathname) {
+          let contentLayer = document.getElementsByClassName("content-layer")[0];
+          if (contentLayer) {
+            let timeString = getTimeString(contentLayer, "sm2_position");
+            let durationString = getTimeString(contentLayer, "sm2_total");
+            result.timeSec = convertTimeStringToSec(timeString);
+            result.durationSec = convertTimeStringToSec(durationString);
+          }
+        }
+      }
+      return result;
+    }
   }
 };

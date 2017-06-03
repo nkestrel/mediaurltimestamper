@@ -32,7 +32,8 @@
         "*://*.vimeo.com/*",
         "*://*.dailymotion.com/*",
         "*://*.twitch.tv/*",
-        "*://*.vid.me/*"
+        "*://*.vid.me/*",
+        "*://*.hearthis.at/*"
       ],
       "js": ["options/defaults.js",
              "scripts/websites.js",
