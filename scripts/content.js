@@ -18,7 +18,8 @@ var options,
     automaticMode,
     updateTimer,
     locationChangeTimer,
-    frameWindow;
+    frameWindow,
+    prevAutoZone;
 
 function setupOptions() {
 
@@ -84,14 +85,18 @@ window.addEventListener("message", function(event) {
       let timeSec = event.data.time;
       let durationSec = event.data.duration;
       let force = event.data.force;
-      if (durationSec > 0) {
-        // Important that timestamp does not get overwritten until some
-        // media time has passed
-        if (force || (timeSec > 0 && validTimerange(timeSec, durationSec))) {
-          let timeString = convertTimeToString(timeSec, currentMethod.format);
-          updateTimestamp(timeString);
-        }
+      let autoZone = durationSec > options.minimumDurationMin * 60 &&
+                     timeSec > options.ignoreStartSec &&
+                     timeSec < (durationSec - options.ignoreEndSec);
+      if (force || autoZone) {
+        let timeString = convertTimeToString(timeSec, currentMethod.format);
+        updateTimestamp(timeString);
       }
+      // Clear timestamp when transitioning into start/end ignore regions
+      if (!autoZone && prevAutoZone) {
+        updateTimestamp("");
+      }
+      prevAutoZone = autoZone;
       break;
     case "mediaFrame":
       frameWindow = event.source;
@@ -147,12 +152,6 @@ function updateTimestamp(timeString) {
     // Update current location so it is not detected as a location change
     currentLocation = newPath;
   }
-}
-
-function validTimerange(timeSec, durationSec) {
-  return durationSec > options.minimumDurationMin * 60 &&
-         timeSec > options.ignoreStartSec &&
-         timeSec < (durationSec - options.ignoreEndSec);
 }
 
 function isValidPath(paths) {
