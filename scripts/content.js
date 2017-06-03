@@ -153,7 +153,7 @@ function updateTimestamp(timeString) {
     // Remove old timestamp URL from global history to avoid spam
     browser.runtime.sendMessage({action: "historyDeleteUrl", url: oldURL});
     // Update current location so it is not detected as a location change
-    currentLocation = newPath;
+    currentLocation = window.location.href;
   }
 }
 
