@@ -5,7 +5,7 @@
     "description": "Name of the extension."
   },
   "extensionDescription": {
-    "message": "Resume media content where you left off by timestamping the URL.",
+    "message": "Resume video or music playback from your last position by timestamping the URL. Compatible with Youtube, SoundCloud and others.",
     "description": "Description of the extension."
   },
   "tooltip_automaticMode": {
@@ -27,7 +27,7 @@
     "message": "Options"
   },
   "options_showPageAction": {
-    "message": "Show page action"
+    "message": "Show page action in location bar"
   },
   "options_automaticTimestamp": {
     "message": "Automatic mode enabled globally by default"

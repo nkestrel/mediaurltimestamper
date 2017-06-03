@@ -3,7 +3,8 @@ Firefox Web Extension
 
 ![](/icons/icon48.png)
 
-**Resume media content where you left off by timestamping the URL.**
+**Resume video or music playback from your last position by timestamping the 
+URL.**
 
 Don't lose your spot in long music sets, podcasts, talks/lectures and saved 
 live streams. Conveniently get the media's current time and put it in the URL 
@@ -12,7 +13,7 @@ This timestamped URL, also known as a deep link, can then be handled by the
 browser's session, history, bookmarks, sync service, share services etc. 
 Anywhere the link goes the timestamp conveniently goes with it.
 
-**Supported websites (HTML5)**: Youtube, Soundcloud, Vimeo, Twitch, Vidme, 
+**Supported websites (HTML5)**: Youtube, SoundCloud, Vimeo, Twitch, Vidme, 
 DailyMotion, PBS, BBC iPlayer, Hearthis.at
 
 Some of these websites already have resume capabilities but require cookies 
@@ -34,8 +35,9 @@ This approach only works with direct media pages and not media embedded in
 other pages.
 
 
-Tags: resume video media music audio time position continue deep link anchor 
-fragment hashtag webextensions webext
+^(Tags: anchor, audio, continue, deep, firefox57, fragment, hashtag, link, 
+media, music, position, remember, resume, resumer, soundcloud, time, 
+timestamp, track, video, webextension, youtube)
 
 ## Technical notes
 
@@ -60,3 +62,17 @@ and automatically resume.
 watch history enabled, video is longer than 20 minutes in addition to other 
 requirements. If cookies are cleared the user must access watch history to 
 resume.
+* Sites that require login usually have watch history and auto-resume.
+* Popularity of supported deep linking schemes:
+
+| Parameter | Count |
+|-----------|-------|
+| #t        | 6     |
+| &start    | 3     |
+| &t        | 2     |
+| #playt    | 1     |
+
+| Units     | Count |
+|-----------|-------|
+| H/M/S     | 7     |
+| Seconds   | 4     |
