@@ -30,7 +30,14 @@ const websites = {
       type: "query",
       parameter: "start",
       format: "seconds"
-    }]
+    }],
+    adPlayingOrLive: function() {
+      let player = document.getElementsByClassName("html5-video-player")[0];
+      if (player && player.classList.contains("ad-interrupting")) {
+        return true;
+      }
+      return document.getElementsByClassName("ytp-live").length > 0;
+    }
   },
   soundcloud: {
     domain: "soundcloud.com",
@@ -39,7 +46,19 @@ const websites = {
       type: "hash",
       parameter: "t",
       format: "hms"
-    }]
+    }],
+    getTimeAndDuration: function() {
+      let result = {};
+      // Location path must match audio being played, use badge avatar path to match up
+      let avatar = document.getElementsByClassName("playbackSoundBadge__avatar")[0];
+      if (avatar && avatar.pathname == window.location.pathname) {
+        let timeString = getTimeString(document, "playbackTimeline__timePassed");
+        let durationString = getTimeString(document, "playbackTimeline__duration");
+        result.timeSec = convertTimeStringToSec(timeString);
+        result.durationSec = convertTimeStringToSec(durationString);
+      }
+      return result;
+    }
   },
   vimeo: {
     domain: "vimeo.com",
@@ -57,7 +76,18 @@ const websites = {
       type: "query",
       parameter: "start",
       format: "seconds"
-    }]
+    }],
+    adPlayingOrLive: function() {
+      let adInfo = document.getElementsByClassName("dmp_AdInfo")[0];
+      if (adInfo && !adInfo.classList.contains("dmp_is-hidden")) {
+        return true;
+      }
+      let liveBadge = document.getElementsByClassName("dmp_LiveBadge")[0];
+      if (liveBadge && !liveBadge.classList.contains("dmp_is-hidden")) {
+        return true;
+      }
+      return false;
+    }
   },
   twitch: {
     domain: "twitch.tv",
@@ -93,6 +123,9 @@ const websites = {
       type: "hash",
       parameter: "playt",
       format: "hms"
-    }]
+    }],
+    adPlayingOrLive: function() {
+      return document.getElementsByClassName("trailer").length > 0;
+    }
   }
 };

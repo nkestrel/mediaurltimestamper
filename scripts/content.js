@@ -164,16 +164,6 @@ function isValidPath(paths) {
   return false;
 }
 
-function convertTimeStringToSec(timeString) {
-  // Convert time format "00:00:00" to seconds
-  let parts = timeString.split(':');
-  let result = 0;
-  for (let i = 0, len = parts.length; i < 3 && i < len; i++) {
-    result = result + parseInt(parts[len - 1 - i], 10) * Math.pow(60, i);
-  }
-  return result;
-}
-
 function convertTimeToString(timeSec, format) {
   let time;
   if (format == "seconds") {

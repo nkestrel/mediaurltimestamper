@@ -8,35 +8,20 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
 
- 
-function getMediaTime(force, currentSite) {
 
-  function getTimeString(className) {
-    let el = document.getElementsByClassName(className)[0];
-    if (el) {
-      for (let node of el.childNodes) {
-        // Make sure text starts with number
-        if (!isNaN(parseInt(node.textContent, 10))) {
-          return node.textContent;
-        }
-      }
-    }
-    return "0";
+function getMediaTime(force, currentSite) {
+  // Prevent ads from replacing existing timestamp
+  let adPlayingOrLive = false;
+  if (typeof currentSite.adPlayingOrLive != "undefined") {
+    adPlayingOrLive = currentSite.adPlayingOrLive();
+  } else {
+    adPlayingOrLive = false;
   }
 
   let result = {};
-
-  // Prevent ads from replacing existing timestamp
-  if (!isAdPlayingOrLivestream(currentSite)) {
-    if (currentSite == websites.soundcloud) {
-      // Location path must match audio being played, use badge avatar path to match up
-      let avatar = document.getElementsByClassName("playbackSoundBadge__avatar")[0];
-      if (avatar && avatar.pathname == window.location.pathname) {
-        let timeString = getTimeString("playbackTimeline__timePassed");
-        let durationString = getTimeString("playbackTimeline__duration");
-        result.timeSec = convertTimeStringToSec(timeString);
-        result.durationSec = convertTimeStringToSec(durationString);
-      }
+  if (!adPlayingOrLive) {
+    if (typeof currentSite.getTimeAndDuration != "undefined") {
+      result = currentSite.getTimeAndDuration();
     } else {
       let video = document.getElementsByTagName("video")[0];
       if (video) {
@@ -45,44 +30,40 @@ function getMediaTime(force, currentSite) {
       }
     }
   }
- 
+
   window.parent.postMessage({type: "returnMediaTime",
                              time: result.timeSec,
                              duration: result.durationSec,
                              force: force}, '*');
- 
+
 }
 
-function isAdPlayingOrLivestream(currentSite) {
-  let adPlaying = false;
-  let livestream = false;
-  switch (currentSite) {
-    case websites.youtube:
-      let player = document.getElementsByClassName("html5-video-player")[0];
-      if (player) {
-        adPlaying = player.classList.contains("ad-interrupting");
-      }
-      livestream = document.getElementsByClassName("ytp-live").length > 0;
-      break;
-    case websites.bbciplayer:
-      adPlaying = document.getElementsByClassName("trailer").length > 0;
-      break;
-    case websites.dailymotion:
-      let adInfo = document.getElementsByClassName("dmp_AdInfo")[0];
-      let liveBadge = document.getElementsByClassName("dmp_LiveBadge")[0];
-      if (adInfo) {
-        adPlaying = !adInfo.classList.contains("dmp_is-hidden");
-      }
-      if (liveBadge) {
-        livestream = !liveBadge.classList.contains("dmp_is-hidden");
-      }
-      break;
+
+function convertTimeStringToSec(timeString) {
+  // Convert time format "00:00:00" to seconds
+  let parts = timeString.split(':');
+  let result = 0;
+  for (let i = 0, len = parts.length; i < 3 && i < len; i++) {
+    result = result + parseInt(parts[len - 1 - i], 10) * Math.pow(60, i);
   }
-  return adPlaying || livestream;
+  return result;
+}
+
+function getTimeString(baseElement, className) {
+  let el = baseElement.getElementsByClassName(className)[0];
+  if (el) {
+    for (let node of el.childNodes) {
+      // Make sure text starts with number
+      if (!isNaN(parseInt(node.textContent, 10))) {
+        return node.textContent;
+      }
+    }
+  }
+  return "0";
 }
 
 // Register frame
-window.parent.postMessage({type: "mediaFrame"}, '*'); 
+window.parent.postMessage({type: "mediaFrame"}, '*');
 
 window.addEventListener("message", function(event) {
   if (event.data.type == "getMediaTime") {
