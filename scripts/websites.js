@@ -61,7 +61,7 @@ const websites = {
     getTimeAndDuration: function() {
       let result = {};
       // Location path must match audio being played, use badge title path to match up
-      let playback = document.getElementsByClassName("playbackSoundBadge__title")[0];
+      let playback = document.getElementsByClassName("playbackSoundBadge__titleLink")[0];
       if (playback) {
         let searchParams = new URLSearchParams(playback.search);
         let inPath = "/" + searchParams.get("in");
