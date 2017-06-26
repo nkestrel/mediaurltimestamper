@@ -86,20 +86,22 @@ window.addEventListener("message", function(event) {
     case "returnMediaTime":
       let timeSec = event.data.time;
       let durationSec = event.data.duration;
-      let force = event.data.force;
-      let autoZone = durationSec > options.minimumDurationMin * 60 &&
-                     timeSec > options.ignoreStartSec &&
-                     timeSec < (durationSec - options.ignoreEndSec);
-      if (force || autoZone) {
-        let timeString = convertTimeToString(timeSec, currentMethod.format);
-        updateTimestamp(timeString);
+      if (timeSec && durationSec) {
+        let force = event.data.force;
+        let autoZone = durationSec > options.minimumDurationMin * 60 &&
+                       timeSec > options.ignoreStartSec &&
+                       timeSec < (durationSec - options.ignoreEndSec);
+        if (force || autoZone) {
+          let timeString = convertTimeToString(timeSec, currentMethod.format);
+          updateTimestamp(timeString);
+        }
+        // Clear timestamp when transitioning into start/end ignore regions
+        if (!locationChanged && !autoZone && prevAutoZone) {
+          updateTimestamp("");
+        }
+        prevAutoZone = autoZone;
+        locationChanged = false;
       }
-      // Clear timestamp when transitioning into start/end ignore regions
-      if (!locationChanged && !autoZone && prevAutoZone) {
-        updateTimestamp("");
-      }
-      prevAutoZone = autoZone;
-      locationChanged = false;
       break;
     case "mediaFrame":
       frameWindow = event.source;
