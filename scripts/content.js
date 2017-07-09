@@ -15,6 +15,7 @@ var options,
     currentSite,
     currentMethod,
     currentLocation,
+    initialLocation,
     automaticMode,
     updateTimer,
     locationChangeTimer,
@@ -32,10 +33,12 @@ function setupOptions() {
   // Detect location change
   clearInterval(locationChangeTimer);
   locationChangeTimer = setInterval(function(event) {
-    if (window.location.href != currentLocation) {
+    let url = window.location.href;
+    if (url != currentLocation) {
       checkMethodAvailable();
       updatePageAction();
-      currentLocation = window.location.href;
+      currentLocation = url;
+      initialLocation = url;
       locationChanged = true;
     }
   }, LOCATION_CHANGE_INTERVAL_MS);
@@ -152,8 +155,11 @@ function updateTimestamp(timeString) {
     window.history.replaceState(window.history.state, "", newPath);
     // Need to reshow pageAction after replacing history.
     updatePageAction();
-    // Remove old timestamp URL from global history to avoid spam
-    browser.runtime.sendMessage({action: "historyDeleteUrl", url: oldURL});
+    // Remove old timestamp URL from global history to avoid spam but keep
+    // initial URL so links are still marked as visited.
+    if (oldURL != initialLocation) {
+      browser.runtime.sendMessage({action: "historyDeleteUrl", url: oldURL});
+    }
     // Update current location so it is not detected as a location change
     currentLocation = window.location.href;
   }
