@@ -1,7 +1,7 @@
 ## Media URL Timestamper
 Firefox Web Extension
 
-![](/icons/icon48.png)
+![](/icons/icon96.png)
 
 **Resume video or music playback from your last position by timestamping the 
 URL.**
@@ -14,7 +14,7 @@ browser's session, history, bookmarks, sync service, share services etc.
 Anywhere the link goes the timestamp conveniently goes with it.
 
 **Supported websites (HTML5)**: Youtube, SoundCloud, Vimeo, Twitch, Vidme, 
-DailyMotion, PBS, BBC iPlayer, Hearthis.at
+DailyMotion, PBS, BBC iPlayer, Hearthis.at.
 
 Some of these websites already have resume capabilities but require cookies 
 or local storage to be retained. Some also need you to be logged in with 
@@ -28,16 +28,16 @@ seconds) for media content that exceeds the minimum duration (default 10
 minutes) and the current time is not close to the start or end (default 120 
 seconds). Alternatively the timestamp can be applied manually by clicking the 
 page action icon in the location bar. The page action has a context menu 
-available in Firefox 53+ which allows clearing the timestamp and temporarily 
-toggling automatic mode on and off for the current page.
+which allows clearing the timestamp and temporarily toggling automatic mode 
+on and off for the current page.
 
 This approach only works with direct media pages and not media embedded in 
 other pages.
 
 
-^(Tags: anchor, audio, continue, deep, firefox57, fragment, hashtag, link, 
+<sub>Tags: anchor, audio, continue, deep, firefox57, fragment, hashtag, link, 
 media, music, position, remember, resume, resumer, soundcloud, time, 
-timestamp, track, video, webextension, youtube)
+timestamp, track, video, webextension, youtube</sub>
 
 ## Technical notes
 
@@ -54,7 +54,7 @@ resume or the video element playing an advertisement.
 * Soundcloud does not use HTML5 media elements so the time and duration are 
 extracted from text nodes.
 * For media players that work across multiple pages, the timestamp should 
-only be updated when the content matches the page.
+only be updated when the content matches the location.
 * Mixcloud does not support timestamp deep linking for licensing reasons.
 * Twitch & BBC iPlayer keep track of the current video time in localStorage 
 and automatically resume.
