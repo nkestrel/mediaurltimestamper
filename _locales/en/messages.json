@@ -50,9 +50,6 @@
   "options_minutes": {
     "message": "minutes"
   },
-  "options_dialog_restoreDefaults": {
-    "message": "Restore defaults?"
-  },
   "options_btndefault": {
     "message": "Defaults"
   }

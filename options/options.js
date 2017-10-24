@@ -57,10 +57,8 @@ function restoreOptions(event) {
 }
 
 function restoreDefaults() {
-  if (window.confirm(browser.i18n.getMessage("options_dialog_restoreDefaults"))) {
-    browser.storage.local.clear();
-    restoreOptions();
-  }
+  browser.storage.local.clear();
+  restoreOptions();
 }
 
 document.addEventListener("DOMContentLoaded", restoreOptions);
