@@ -33,7 +33,7 @@
     "message": "Automatic mode enabled globally by default"
   },
   "options_minimumDurationMin": {
-    "message": "Minimum duration:"
+    "message": "Minimum media duration:"
   },
   "options_pollIntervalSec": {
     "message": "Update interval:"
