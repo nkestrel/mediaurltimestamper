@@ -94,15 +94,8 @@ const websites = {
       format: "seconds"
     }],
     adPlayingOrLive: function() {
-      let adInfo = document.getElementsByClassName("dmp_AdInfo")[0];
-      if (adInfo && !adInfo.classList.contains("dmp_is-hidden")) {
-        return true;
-      }
-      let liveBadge = document.getElementsByClassName("dmp_LiveBadge")[0];
-      if (liveBadge && !liveBadge.classList.contains("dmp_is-hidden")) {
-        return true;
-      }
-      return false;
+      let adInfo = document.getElementsByClassName("np_ButtonAdLink")[0];
+      return adInfo && adInfo.style.display != "none";
     }
   },
   twitch: {
