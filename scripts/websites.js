@@ -116,18 +116,6 @@ const websites = {
       format: "seconds"
     }]
   },
-  bbciplayer: {
-    domain: "bbc.co.uk",
-    methods: [{
-      paths: ["/iplayer/"],
-      type: "hash",
-      parameter: "playt",
-      format: "hms"
-    }],
-    adPlayingOrLive: function() {
-      return document.getElementsByClassName("trailer").length > 0;
-    }
-  },
   hearthis: {
     domain: "hearthis.at",
     methods: [{

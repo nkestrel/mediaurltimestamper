@@ -42,8 +42,7 @@
     },
     {
       "matches": [
-        "*://*.pbs.org/*",
-        "*://*.bbc.co.uk/*"
+        "*://*.pbs.org/*"
       ],
       "js": ["options/defaults.js",
              "scripts/websites.js",
@@ -51,8 +50,7 @@
       "run_at": "document_start"
     },
     {
-      "matches": ["*://*.pbs.org/portalplayer/*",
-                  "*://*.bbc.co.uk/emp/*"],
+      "matches": ["*://*.pbs.org/portalplayer/*"],
       "js": ["scripts/websites.js",
              "scripts/mediaframe.js"],
       "run_at": "document_start",
