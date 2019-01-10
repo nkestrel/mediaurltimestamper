@@ -107,15 +107,6 @@ const websites = {
       format: "hms"
     }]
   },
-  vidme: {
-    domain: "vid.me",
-    methods: [{
-      paths: ["/"],
-      type: "hash",
-      parameter: "t",
-      format: "hms"
-    }]
-  },
   pbs: {
     domain: "pbs.org",
     methods: [{
