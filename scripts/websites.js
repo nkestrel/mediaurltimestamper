@@ -151,5 +151,14 @@ const websites = {
       parameter: "start",
       format: "hms"
     }]
+  },
+  bittube: {
+    domain: "bit.tube",
+    methods: [{
+      paths: ["/play", "/playerembed/"],
+      type: "query",
+      parameter: "time",
+      format: "seconds"
+    }]
   }
 };

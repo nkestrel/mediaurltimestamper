@@ -33,7 +33,8 @@
         "*://*.dailymotion.com/*",
         "*://*.twitch.tv/*",
         "*://*.hearthis.at/*",
-        "*://*.framatube.org/*"
+        "*://*.framatube.org/*",
+        "*://*.bit.tube/*"
       ],
       "js": ["options/defaults.js",
              "scripts/websites.js",
