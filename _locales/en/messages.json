@@ -9,10 +9,10 @@
     "description": "Description of the extension."
   },
   "tooltip_automaticMode": {
-    "message": "Automatic timestamp"
+    "message": "auto"
   },
   "tooltip_manualMode": {
-    "message": "Manual timestamp"
+    "message": "manual"
   },
   "menu_updateTimestamp": {
     "message": "Update timestamp"

@@ -73,11 +73,12 @@ function updatePageAction(tabId, show, enabled) {
       "38": "icons/icon38" + disabledSuffix + ".png",
     }
   });
-  let tooltip = (enabled ? browser.i18n.getMessage("tooltip_automaticMode") :
-                           browser.i18n.getMessage("tooltip_manualMode"))
+  let title = browser.i18n.getMessage("extensionName") + " (" +
+              (enabled ? browser.i18n.getMessage("tooltip_automaticMode") :
+                         browser.i18n.getMessage("tooltip_manualMode")) + ")";
   browser.pageAction.setTitle({
     tabId: tabId,
-    title: tooltip
+    title
   });
   if (show) {
     browser.pageAction.show(tabId);
