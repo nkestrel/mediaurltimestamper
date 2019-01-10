@@ -170,5 +170,14 @@ const websites = {
       parameter: "time",
       format: "seconds"
     }]
+  },
+  vidlii: {
+    domains: ["vidlii.com"],
+    methods: [{
+      paths: ["/watch", "/embed"],
+      type: "hash",
+      parameter: "t",
+      format: "seconds"
+    }]
   }
 };

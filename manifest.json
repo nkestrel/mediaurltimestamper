@@ -36,7 +36,8 @@
         "*://*.framatube.org/*",
         "*://*.bit.tube/*",
         "*://*.invidio.us/*",
-        "*://*.youtube-nocookie.com/*"
+        "*://*.youtube-nocookie.com/*",
+        "*://*.vidlii.com/*"
       ],
       "js": ["options/defaults.js",
              "scripts/websites.js",
