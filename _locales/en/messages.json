@@ -5,7 +5,7 @@
     "description": "Name of the extension."
   },
   "extensionDescription": {
-    "message": "Resume video or music playback from your last position by timestamping the URL. Compatible with Youtube, SoundCloud and others.",
+    "message": "Remember audio/video playback position for later resuming without cookies, storage or logging in by automatically timestamping the link. Compatible with Youtube, SoundCloud, Invidious and others.",
     "description": "Description of the extension."
   },
   "tooltip_automaticMode": {
