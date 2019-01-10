@@ -36,12 +36,17 @@ const websites = {
       parameter: "start",
       format: "seconds"
     }],
-    adPlayingOrLive: function() {
+    adPlaying: function() {
       let player = document.getElementsByClassName("html5-video-player")[0];
-      if (player && player.classList.contains("ad-interrupting")) {
-        return true;
+      return player && player.classList.contains("ad-interrupting");
+    },
+    livePlaying: function() {
+      if (document.getElementsByClassName("ytp-live").length > 0) {
+        // Live button is disabled when already live
+        let liveBadge = document.getElementsByClassName("ytp-live-badge")[0];
+        return liveBadge && liveBadge.disabled;
       }
-      return document.getElementsByClassName("ytp-live").length > 0;
+      return false;
     }
   },
   soundcloud: {
@@ -52,7 +57,7 @@ const websites = {
       parameter: "t",
       format: "hms"
     }],
-    adPlayingOrLive: function() {
+    adPlaying: function() {
       let panel = document.getElementsByClassName("playControlsPanel")[0];
       if (panel &&
           panel.classList.contains("is-visible") &&
@@ -98,7 +103,7 @@ const websites = {
       parameter: "start",
       format: "seconds"
     }],
-    adPlayingOrLive: function() {
+    adPlaying: function() {
       let adInfo = document.getElementsByClassName("np_ButtonAdLink")[0];
       return adInfo && adInfo.style.display != "none";
     }

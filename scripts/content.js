@@ -21,7 +21,8 @@ var options,
     locationChangeTimer,
     locationChanged,
     frameWindow,
-    prevAutoZone;
+    prevAutoZone,
+    prevLivePlaying;
 
 function setupOptions() {
 
@@ -91,6 +92,7 @@ window.addEventListener("message", function(event) {
     case "returnMediaTime":
       let timeSec = event.data.time;
       let durationSec = event.data.duration;
+      let livePlaying = event.data.livePlaying;
       if (timeSec && durationSec) {
         let force = event.data.force;
         let autoZone = durationSec > options.minimumDurationMin * 60 &&
@@ -106,7 +108,11 @@ window.addEventListener("message", function(event) {
         }
         prevAutoZone = autoZone;
         locationChanged = false;
+      } else if (livePlaying && !prevLivePlaying) {
+        // Clear timestamp when going from delayed to live
+        updateTimestamp("");
       }
+      prevLivePlaying = livePlaying;
       break;
     case "mediaFrame":
       frameWindow = event.source;

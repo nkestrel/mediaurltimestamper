@@ -11,15 +11,21 @@
 
 function getMediaTime(force, currentSite) {
   // Prevent ads from replacing existing timestamp
-  let adPlayingOrLive = false;
-  if (typeof currentSite.adPlayingOrLive != "undefined") {
-    adPlayingOrLive = currentSite.adPlayingOrLive();
+  let adPlaying = false;
+  if (typeof currentSite.adPlaying != "undefined") {
+    adPlaying = currentSite.adPlaying();
   } else {
-    adPlayingOrLive = false;
+    adPlaying = false;
+  }
+  let livePlaying = false;
+  if (typeof currentSite.livePlaying != "undefined") {
+    livePlaying = currentSite.livePlaying();
+  } else {
+    livePlaying = false;
   }
 
   let result = {};
-  if (!adPlayingOrLive) {
+  if (!adPlaying && !livePlaying) {
     if (typeof currentSite.getTimeAndDuration != "undefined") {
       result = currentSite.getTimeAndDuration();
     } else {
@@ -34,6 +40,7 @@ function getMediaTime(force, currentSite) {
   window.parent.postMessage({type: "returnMediaTime",
                              time: result.timeSec,
                              duration: result.durationSec,
+                             livePlaying,
                              force: force}, '*');
 
 }
