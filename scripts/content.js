@@ -118,6 +118,10 @@ function updateTimestamp(timeString) {
   let searchParams = new URLSearchParams(window.location.search);
   let hash = window.location.hash;
 
+  if (!currentMethod) {
+    return;
+  }
+
   if (currentMethod.type == "hash") {
     if (!timeString) {
       hash = ""
