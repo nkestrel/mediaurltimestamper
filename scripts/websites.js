@@ -9,8 +9,8 @@
  */
 
 
-const websites = {
-  youtube: {
+const websites = [
+  { id: "youtube",
     domains: [
       "youtube.com",
       "youtube-nocookie.com",
@@ -49,7 +49,7 @@ const websites = {
       return false;
     }
   },
-  soundcloud: {
+  { id: "soundcloud",
     domains: ["soundcloud.com"],
     methods: [{
       paths: ["/"],
@@ -86,7 +86,7 @@ const websites = {
       return result;
     }
   },
-  vimeo: {
+  { id: "vimeo",
     domains: ["vimeo.com"],
     methods: [{
       paths: ["/"],
@@ -95,7 +95,7 @@ const websites = {
       format: "hms"
     }]
   },
-  dailymotion: {
+  { id: "dailymotion",
     domains: ["dailymotion.com"],
     methods: [{
       paths: ["/video/", "/embed/video/"],
@@ -108,7 +108,7 @@ const websites = {
       return adInfo && adInfo.style.display != "none";
     }
   },
-  twitch: {
+  { id: "twitch",
     domains: ["twitch.tv"],
     methods: [{
       paths: ["/videos/"],
@@ -117,7 +117,7 @@ const websites = {
       format: "hms"
     }]
   },
-  pbs: {
+  { id: "pbs",
     domains: ["pbs.org"],
     methods: [{
       paths: ["/video/"],
@@ -126,7 +126,7 @@ const websites = {
       format: "seconds"
     }]
   },
-  hearthis: {
+  { id: "hearthis",
     domains: ["hearthis.at"],
     methods: [{
       paths: ["/"],
@@ -153,7 +153,7 @@ const websites = {
       return result;
     }
   },
-  framatube: {
+  { id: "framatube",
     domains: ["framatube.org"],
     methods: [{
       paths: ["/videos/watch/", "/videos/embed/"],
@@ -162,7 +162,7 @@ const websites = {
       format: "hms"
     }]
   },
-  bittube: {
+  { id: "bittube",
     domains: ["bit.tube"],
     methods: [{
       paths: ["/play", "/playerembed/"],
@@ -171,7 +171,7 @@ const websites = {
       format: "seconds"
     }]
   },
-  vidlii: {
+  { id: "vidlii",
     domains: ["vidlii.com"],
     methods: [{
       paths: ["/watch", "/embed"],
@@ -180,4 +180,4 @@ const websites = {
       format: "seconds"
     }]
   }
-};
+];

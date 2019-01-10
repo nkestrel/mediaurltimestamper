@@ -75,14 +75,10 @@ window.parent.postMessage({type: "mediaFrame"}, '*');
 window.addEventListener("message", function(event) {
   if (event.data.type == "getMediaTime") {
     let currentSite;
-    for (let key of Object.keys(websites)) {
-      for (let domain of websites[key].domains) {
-        for (let domainMatch of event.data.domains) {
-          if (domain == domainMatch) {
-            currentSite = websites[key];
-            break;
-          }
-        }
+    for (let website of websites) {
+      if (website.id == event.data.websiteId) {
+        currentSite = website;
+        break;
       }
     }
     getMediaTime(event.data.force, currentSite);
