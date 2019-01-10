@@ -61,9 +61,11 @@ function setupAutomaticTimestamp() {
 
 function identifyWebsite() {
   for (let key of Object.keys(websites)) {
-    if (window.location.hostname.endsWith(websites[key].domain)) {
-      currentSite = websites[key];
-      break;
+    for (let domain of websites[key].domains) {
+      if (window.location.hostname.endsWith(domain)) {
+        currentSite = websites[key];
+        break;
+      }
     }
   }
 }
@@ -81,7 +83,7 @@ function checkMethodAvailable() {
 
 function doTimestamp(force) {
   let targetWindow = frameWindow || window;
-  targetWindow.postMessage({type: "getMediaTime", force, domain: currentSite.domain}, '*');
+  targetWindow.postMessage({type: "getMediaTime", force, domains: currentSite.domains}, '*');
 }
 
 window.addEventListener("message", function(event) {

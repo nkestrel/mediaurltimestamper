@@ -69,9 +69,13 @@ window.addEventListener("message", function(event) {
   if (event.data.type == "getMediaTime") {
     let currentSite;
     for (let key of Object.keys(websites)) {
-      if (websites[key].domain == event.data.domain) {
-        currentSite = websites[key];
-        break;
+      for (let domain of websites[key].domains) {
+        for (let domainMatch of event.data.domains) {
+          if (domain == domainMatch) {
+            currentSite = websites[key];
+            break;
+          }
+        }
       }
     }
     getMediaTime(event.data.force, currentSite);

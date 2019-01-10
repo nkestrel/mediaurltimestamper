@@ -11,7 +11,7 @@
 
 const websites = {
   youtube: {
-    domain: "youtube.com",
+    domains: ["youtube.com"],
     // Have choice of query or hash but query resumes faster and doesn't
     // cause the video to skip during playback
     methods: [{
@@ -40,7 +40,7 @@ const websites = {
     }
   },
   soundcloud: {
-    domain: "soundcloud.com",
+    domains: ["soundcloud.com"],
     methods: [{
       paths: ["/"],
       type: "hash",
@@ -77,7 +77,7 @@ const websites = {
     }
   },
   vimeo: {
-    domain: "vimeo.com",
+    domains: ["vimeo.com"],
     methods: [{
       paths: ["/"],
       type: "hash",
@@ -86,7 +86,7 @@ const websites = {
     }]
   },
   dailymotion: {
-    domain: "dailymotion.com",
+    domains: ["dailymotion.com"],
     methods: [{
       paths: ["/video/", "/embed/video/"],
       type: "query",
@@ -99,7 +99,7 @@ const websites = {
     }
   },
   twitch: {
-    domain: "twitch.tv",
+    domains: ["twitch.tv"],
     methods: [{
       paths: ["/videos/"],
       type: "query",
@@ -108,7 +108,7 @@ const websites = {
     }]
   },
   pbs: {
-    domain: "pbs.org",
+    domains: ["pbs.org"],
     methods: [{
       paths: ["/video/"],
       type: "query",
@@ -117,7 +117,7 @@ const websites = {
     }]
   },
   hearthis: {
-    domain: "hearthis.at",
+    domains: ["hearthis.at"],
     methods: [{
       paths: ["/"],
       type: "hash",
@@ -144,7 +144,7 @@ const websites = {
     }
   },
   framatube: {
-    domain: "framatube.org",
+    domains: ["framatube.org"],
     methods: [{
       paths: ["/videos/watch/", "/videos/embed/"],
       type: "query",
@@ -153,7 +153,7 @@ const websites = {
     }]
   },
   bittube: {
-    domain: "bit.tube",
+    domains: ["bit.tube"],
     methods: [{
       paths: ["/play", "/playerembed/"],
       type: "query",
