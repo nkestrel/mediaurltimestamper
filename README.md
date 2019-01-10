@@ -1,10 +1,12 @@
 ## Media URL Timestamper
 Firefox Web Extension
+[Available on Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/media-url-timestamper/)
 
 ![](/icons/icon96.png)
 
-**Resume video or music playback from your last position by timestamping the 
-URL.**
+**Remember audio/video playback position for later resuming without cookies, 
+storage or logging in by automatically timestamping the link. Compatible with 
+Youtube, SoundCloud, Invidious and others.**
 
 Don't lose your spot in long music sets, podcasts, talks/lectures and saved 
 live streams. Conveniently get the media's current time and put it in the URL 
@@ -13,8 +15,8 @@ This timestamped URL, also known as a deep link, can then be handled by the
 browser's session, history, bookmarks, sync service, share services etc. 
 Anywhere the link goes the timestamp conveniently goes with it.
 
-**Supported websites (HTML5)**: Youtube, SoundCloud, Vimeo, Twitch, Vidme, 
-DailyMotion, PBS, BBC iPlayer, Hearthis.at.
+**Supported websites**: Youtube, SoundCloud, Vimeo, Twitch, DailyMotion, PBS, 
+Hearthis.at, Invidious, HookTube, FramaTube (PeerTube site), BitTube, Vidlii.
 
 Some of these websites already have resume capabilities but require cookies 
 or local storage to be retained. Some also need you to be logged in with 
@@ -35,20 +37,21 @@ This approach only works with direct media pages and not media embedded in
 other pages.
 
 
-<sub>Tags: anchor, audio, continue, deep, firefox57, fragment, hashtag, link, 
+<sub>Tags: anchor, audio, continue, deep, fragment, hashtag, link, 
 media, music, position, remember, resume, resumer, soundcloud, time, 
-timestamp, track, video, webextension, youtube</sub>
+timestamp, track, video, webextension, youtube, cookies, login, privacy, 
+tracking</sub>
 
 ## Technical notes
 
 * History permission is needed to remove old timestamped URLs and stop them 
 filling up global history.
-* Youtube applies timestamps in order: &start -> &t -> #t, changing #t 
-interrupts playback.
-* Youtube has multiple ways of timestamp deep linking which all need to be 
-accounted for so that unused methods can be removed.
-* Some sites frame their media content, need to inject in all frames and send 
-message back to parent window.
+* Youtube applies timestamps in order: &time_continue -> &t -> &start -> #t.
+Changing #t interrupts playback.
+* Where multiple timestamp parameters are available, unused ones may need to 
+be removed to avoid conflicts.
+* Some sites frame their media content which requires injecting into them and 
+sending messages back to the parent window.
 * Important not to overwrite the timestamp due to content taking a while to 
 resume or the video element playing an advertisement.
 * Soundcloud does not use HTML5 media elements so the time and duration are 
@@ -56,23 +59,28 @@ extracted from text nodes.
 * For media players that work across multiple pages, the timestamp should 
 only be updated when the content matches the location.
 * Mixcloud does not support timestamp deep linking for licensing reasons.
-* Twitch & BBC iPlayer keep track of the current video time in localStorage 
-and automatically resume.
+* Twitch keeps track of the current video time in localStorage and 
+automatically resumes.
 * Youtube keeps track of the current video time if the user is logged in, has 
 watch history enabled, video is longer than 20 minutes in addition to other 
 requirements. If cookies are cleared the user must access watch history to 
 resume.
 * Sites that require login usually have watch history and auto-resume.
-* Popularity of supported deep linking schemes:
+* Popularity of deep linking schemes encountered (2019):
 
-| Parameter | Count |
-|-----------|-------|
-| #t        | 6     |
-| &start    | 3     |
-| &t        | 2     |
-| #playt    | 1     |
+| Parameter       | Count |
+|-----------------|-------|
+| #t              | 6     |
+| &t              | 4     |
+| &start          | 3     |
+| &time_continue  | 1     |
+| &time           | 1     |
 
 | Units     | Count |
 |-----------|-------|
+| Seconds   | 11    |
 | H/M/S     | 7     |
-| Seconds   | 4     |
+
+Youtube alternative frontends like Invidious that use the same parameters 
+for compatibility reasons are excluded from the count.
+
