@@ -40,7 +40,7 @@
              "scripts/websites.js",
              "scripts/content.js",
              "scripts/mediaframe.js"],
-      "run_at": "document_start"
+      "run_at": "document_end"
     },
     {
       "matches": [
@@ -49,13 +49,13 @@
       "js": ["options/defaults.js",
              "scripts/websites.js",
              "scripts/content.js"],
-      "run_at": "document_start"
+      "run_at": "document_end"
     },
     {
       "matches": ["*://*.pbs.org/portalplayer/*"],
       "js": ["scripts/websites.js",
              "scripts/mediaframe.js"],
-      "run_at": "document_start",
+      "run_at": "document_end",
       "all_frames": true
     }
   ],
