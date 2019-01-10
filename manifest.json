@@ -32,7 +32,8 @@
         "*://*.vimeo.com/*",
         "*://*.dailymotion.com/*",
         "*://*.twitch.tv/*",
-        "*://*.hearthis.at/*"
+        "*://*.hearthis.at/*",
+        "*://*.framatube.org/*"
       ],
       "js": ["options/defaults.js",
              "scripts/websites.js",

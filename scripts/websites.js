@@ -142,5 +142,14 @@ const websites = {
       }
       return result;
     }
+  },
+  framatube: {
+    domain: "framatube.org",
+    methods: [{
+      paths: ["/videos/watch/", "/videos/embed/"],
+      type: "query",
+      parameter: "start",
+      format: "hms"
+    }]
   }
 };
