@@ -34,7 +34,9 @@
         "*://*.twitch.tv/*",
         "*://*.hearthis.at/*",
         "*://*.framatube.org/*",
-        "*://*.bit.tube/*"
+        "*://*.bit.tube/*",
+        "*://*.invidio.us/*",
+        "*://*.youtube-nocookie.com/*"
       ],
       "js": ["options/defaults.js",
              "scripts/websites.js",
@@ -44,7 +46,8 @@
     },
     {
       "matches": [
-        "*://*.pbs.org/*"
+        "*://*.pbs.org/*",
+        "*://*.hooktube.com/*"
       ],
       "js": ["options/defaults.js",
              "scripts/websites.js",
@@ -52,7 +55,9 @@
       "run_at": "document_end"
     },
     {
-      "matches": ["*://*.pbs.org/portalplayer/*"],
+      "matches": ["*://*.pbs.org/portalplayer/*",
+                  "*://*.youtube.com/embed/*",
+                  "*://*.invidio.us/embed/*"],
       "js": ["scripts/websites.js",
              "scripts/mediaframe.js"],
       "run_at": "document_end",

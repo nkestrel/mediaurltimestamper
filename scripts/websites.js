@@ -11,7 +11,12 @@
 
 const websites = {
   youtube: {
-    domains: ["youtube.com"],
+    domains: [
+      "youtube.com",
+      "youtube-nocookie.com",
+      "hooktube.com",
+      "invidio.us"
+    ],
     // Have choice of query or hash but query resumes faster and doesn't
     // cause the video to skip during playback
     methods: [{
