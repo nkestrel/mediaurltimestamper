@@ -29,7 +29,12 @@ function getMediaTime(force, currentSite) {
     if (typeof currentSite.getTimeAndDuration != "undefined") {
       result = currentSite.getTimeAndDuration();
     } else {
-      let video = document.getElementsByTagName("video")[0];
+      let video;
+      if (typeof currentSite.getVideo != "undefined") {
+        video = currentSite.getVideo();
+      } else {
+        video = document.getElementsByTagName("video")[0];
+      }
       if (video) {
         result.timeSec = video.currentTime;
         result.durationSec = video.duration;

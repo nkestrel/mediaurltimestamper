@@ -115,7 +115,13 @@ const websites = [
       type: "query",
       parameter: "t",
       format: "hms"
-    }]
+    }],
+    getVideo: function() {
+      let player = document.getElementsByClassName("player-video")[0];
+      if (player) {
+        return player.getElementsByTagName("video")[0];
+      }
+    }
   },
   { id: "pbs",
     domains: ["pbs.org"],
