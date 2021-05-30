@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "__MSG_extensionName__",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "author": "Kestrel",
   "description": "__MSG_extensionDescription__",
   "homepage_url": "https://github.com/nkestrel/mediaurltimestamper",
@@ -37,7 +37,8 @@
         "*://*.bit.tube/*",
         "*://*.invidio.us/*",
         "*://*.youtube-nocookie.com/*",
-        "*://*.vidlii.com/*"
+        "*://*.vidlii.com/*",
+        "*://*.yewtu.be/*"
       ],
       "js": ["options/defaults.js",
              "scripts/websites.js",
@@ -58,7 +59,8 @@
     {
       "matches": ["*://*.pbs.org/portalplayer/*",
                   "*://*.youtube.com/embed/*",
-                  "*://*.invidio.us/embed/*"],
+                  "*://*.invidio.us/embed/*",
+                  "*://*.yewtu.be/*"],
       "js": ["scripts/websites.js",
              "scripts/mediaframe.js"],
       "run_at": "document_end",
