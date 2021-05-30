@@ -15,7 +15,8 @@ const websites = [
       "youtube.com",
       "youtube-nocookie.com",
       "hooktube.com",
-      "invidio.us"
+      "invidio.us",
+      "yewtu.be"
     ],
     // Have choice of query or hash but query resumes faster and doesn't
     // cause the video to skip during playback
