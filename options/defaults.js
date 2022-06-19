@@ -1,4 +1,7 @@
 
+var IS_CHROME = !browser;
+
+var browser = browser || chrome;
 
 var defaultOptions = {
   "showPageAction":              true,
