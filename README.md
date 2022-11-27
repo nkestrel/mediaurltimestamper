@@ -69,20 +69,19 @@ watch history enabled, video is longer than 20 minutes in addition to other
 requirements. If cookies are cleared the user must access watch history to 
 resume.
 * Sites that require login usually have watch history and auto-resume.
-* Popularity of deep linking schemes encountered (2019):
+* Popularity of deep linking schemes encountered (2022):
 
 | Parameter       | Count |
 |-----------------|-------|
-| #t              | 6     |
-| &t              | 4     |
-| &start          | 3     |
+| &t              | 6     |
+| #t              | 4     |
+| &start          | 4     |
 | &time_continue  | 1     |
-| &time           | 1     |
 
 | Units     | Count |
 |-----------|-------|
-| Seconds   | 11    |
-| H/M/S     | 7     |
+| Seconds   | 7     |
+| H/M/S     | 6     |
 
 Youtube alternative frontends like Invidious that use the same parameters 
 for compatibility reasons are excluded from the count.
