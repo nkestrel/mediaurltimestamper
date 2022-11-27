@@ -211,7 +211,10 @@ const websites = [
   { id: "peertube",
     domains: [
       "framatube.org",
-      "bittube.video"
+      "bittube.video",
+      "tilvids.com",
+      "peertube.linuxrocks.online",
+      "video.antopie.org"
     ],
     methods: [{
       paths: ["/w/", "/videos/watch/", "/videos/embed/"],

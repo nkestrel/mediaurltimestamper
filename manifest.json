@@ -28,16 +28,7 @@
     {
       "matches": [
         "*://*.youtube.com/*",
-        "*://*.soundcloud.com/*",
-        "*://*.vimeo.com/*",
-        "*://*.twitch.tv/*",
-        "*://*.hearthis.at/*",
-        "*://*.framatube.org/*",
-        "*://*.bittube.video/*",
         "*://*.youtube-nocookie.com/*",
-        "*://*.vidlii.com/*",
-        "*://tube.cadence.moe/*",
-        "*://*.utreon.com/*",
 
         "*://*.piped.video/*",
         "*://piped.tokhmi.xyz/*",
@@ -81,6 +72,20 @@
         "*://youtube.076.ne.jp/*",
         "*://invidious.tiekoetter.com/*",
         "*://invidious.slipfox.xyz/*",
+
+        "*://*.soundcloud.com/*",
+        "*://*.vimeo.com/*",
+        "*://*.twitch.tv/*",
+        "*://*.hearthis.at/*",
+        "*://*.vidlii.com/*",
+        "*://tube.cadence.moe/*",
+        "*://*.utreon.com/*",
+
+        "*://*.framatube.org/*",
+        "*://*.bittube.video/*",
+        "*://*.tilvids.com/*",
+        "*://peertube.linuxrocks.online/*",
+        "*://video.antopie.org/*",
 
         "*://*.odysee.com/*",
         "*://lbry.bcow.xyz/*",
