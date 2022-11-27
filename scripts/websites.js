@@ -165,22 +165,16 @@ const websites = [
       return result;
     }
   },
-  { id: "framatube",
-    domains: ["framatube.org"],
+  { id: "peertube",
+    domains: [
+      "framatube.org",
+      "bittube.video"
+    ],
     methods: [{
-      paths: ["/videos/watch/", "/videos/embed/"],
+      paths: ["/w/", "/videos/watch/", "/videos/embed/"],
       type: "query",
       parameter: "start",
       format: "hms"
-    }]
-  },
-  { id: "bittube",
-    domains: ["bit.tube"],
-    methods: [{
-      paths: ["/play", "/playerembed/"],
-      type: "query",
-      parameter: "time",
-      format: "seconds"
     }]
   },
   { id: "vidlii",
