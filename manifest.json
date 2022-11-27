@@ -30,7 +30,6 @@
         "*://*.youtube.com/*",
         "*://*.soundcloud.com/*",
         "*://*.vimeo.com/*",
-        "*://*.dailymotion.com/*",
         "*://*.twitch.tv/*",
         "*://*.hearthis.at/*",
         "*://*.framatube.org/*",
@@ -47,7 +46,8 @@
     },
     {
       "matches": [
-        "*://*.pbs.org/*"
+        "*://*.pbs.org/*",
+        "*://*.dailymotion.com/*"
       ],
       "js": ["options/defaults.js",
              "scripts/websites.js",
@@ -56,7 +56,8 @@
     },
     {
       "matches": [
-        "*://*.pbs.org/portalplayer/*"
+        "*://*.pbs.org/portalplayer/*",
+        "*://*.dailymotion.com/embed*"
       ],
       "js": ["scripts/websites.js",
              "scripts/mediaframe.js"],
