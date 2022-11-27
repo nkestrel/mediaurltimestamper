@@ -8,8 +8,8 @@
   "default_locale": "en",
 
   "icons": {
-    "48": "icons/icon48.png",
-    "96": "icons/icon96.png"
+    "48": "icons/icon.svg",
+    "96": "icons/icon.svg"
   },
 
   "applications": {
@@ -129,8 +129,8 @@
 
   "page_action": {
     "default_icon": {
-      "19": "icons/icon19disabled.png",
-      "38": "icons/icon38disabled.png"
+      "19": "icons/icondisabled.svg",
+      "38": "icons/icondisabled.svg"
     }
   },
 

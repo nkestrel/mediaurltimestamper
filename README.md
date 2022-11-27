@@ -1,8 +1,10 @@
+![](/icons/icon.svg)
+
 ## Media URL Timestamper
+
 Firefox Web Extension
 [Available on Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/media-url-timestamper/)
 
-![](/icons/icon96.png)
 
 **Remember audio/video playback position for later resuming without cookies, 
 storage or logging in by automatically timestamping the link. Compatible with 
