@@ -208,7 +208,7 @@ function updatePageAction() {
                                  automatic: automaticMode});
 }
 
-browser.runtime.onMessage.addListener(function(message) {
+browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
   switch (message.action) {
     case "doTimestamp":
       if (checkMethodAvailable()) {
@@ -222,6 +222,9 @@ browser.runtime.onMessage.addListener(function(message) {
       automaticMode = !automaticMode;
       setupAutomaticTimestamp();
       updatePageAction();
+      break;
+    case "getAutoMode":
+      sendResponse(automaticMode);
       break;
   }
 });

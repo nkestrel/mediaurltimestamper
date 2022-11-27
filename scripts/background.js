@@ -38,6 +38,7 @@ browser.contextMenus.create({
 browser.contextMenus.create({
   id: "toggleAuto",
   title: browser.i18n.getMessage("menu_toggleAuto"),
+  type: "checkbox",
   contexts: ["page_action"]
 });
 
@@ -53,6 +54,13 @@ browser.contextMenus.onClicked.addListener(function(info, tab) {
       browser.tabs.sendMessage(tab.id, {action: "toggleAuto"});
       break;
   }
+});
+
+browser.contextMenus.onShown.addListener((info, tab) => {
+  browser.tabs.sendMessage(tab.id, {action: "getAutoMode"}).then(automatic => {
+    browser.contextMenus.update("toggleAuto", {checked: automatic});
+    browser.contextMenus.refresh();
+  });
 });
 
 function updatePageAction(tabId, show, enabled) {
