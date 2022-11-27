@@ -14,7 +14,29 @@ const websites = [
     domains: [
       "youtube.com",
       "youtube-nocookie.com",
-      "invidio.us"
+      // Invidious instances
+      "yewtu.be",
+      "invidious.snopyta.org",
+      "inv.riverside.rocks",
+      "vid.puffyan.us",
+      "invidious.flokinet.to",
+      "inv.bp.projectsegfau.lt",
+      "invidious.esmailelbob.xyz",
+      "yt.artemislena.eu",
+      "invidious.namazso.eu",
+      "invidious.sethforprivacy.com",
+      "invidious.baczek.me",
+      "invidious.projectsegfau.lt",
+      "invidious.weblibre.org",
+      "invidious.nerdvpn.de",
+      "invidio.xamh.de",
+      "inv.vern.cc",
+      "y.com.sb",
+      "invidious.dhusch.de",
+      "inv.odyssey346.dev",
+      "youtube.076.ne.jp",
+      "invidious.tiekoetter.com",
+      "invidious.slipfox.xyz"
     ],
     // Have choice of query or hash but query resumes faster and doesn't
     // cause the video to skip during playback
