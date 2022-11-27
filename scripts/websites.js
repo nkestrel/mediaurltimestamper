@@ -142,7 +142,7 @@ const websites = [
     domains: ["hearthis.at"],
     methods: [{
       paths: ["/"],
-      type: "hash",
+      type: "query",
       parameter: "t",
       format: "seconds"
     }],
