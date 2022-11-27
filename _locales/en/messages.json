@@ -23,9 +23,6 @@
   "menu_toggleAuto": {
     "message": "Toggle automatic mode"
   },
-  "menu_showOptions": {
-    "message": "Options"
-  },
   "options_showPageAction": {
     "message": "Show page action in location bar"
   },

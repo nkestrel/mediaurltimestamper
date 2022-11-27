@@ -41,12 +41,6 @@ browser.contextMenus.create({
   contexts: ["page_action"]
 });
 
-browser.contextMenus.create({
-  id: "showOptions",
-  title: browser.i18n.getMessage("menu_showOptions"),
-  contexts: ["page_action"]
-});
-
 browser.contextMenus.onClicked.addListener(function(info, tab) {
   switch (info.menuItemId) {
     case "updateTimestamp":
@@ -57,9 +51,6 @@ browser.contextMenus.onClicked.addListener(function(info, tab) {
       break;
     case "toggleAuto":
       browser.tabs.sendMessage(tab.id, {action: "toggleAuto"});
-      break;
-    case "showOptions":
-      browser.runtime.openOptionsPage();
       break;
   }
 });
