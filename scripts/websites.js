@@ -123,7 +123,7 @@ const websites = [
       format: "hms"
     }],
     getVideo: function() {
-      let player = document.getElementsByClassName("player-video")[0];
+      let player = document.getElementsByClassName("video-player")[0];
       if (player) {
         return player.getElementsByTagName("video")[0];
       }
