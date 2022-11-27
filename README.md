@@ -3,8 +3,8 @@
 ## Media URL Timestamper
 
 Firefox Web Extension
-[Available on Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/media-url-timestamper/)
 
+[<img src="/local_resources/get-the-addon.png">](https://addons.mozilla.org/en-US/firefox/addon/media-url-timestamper/)
 
 **Remember audio/video playback position for later resuming without cookies, 
 storage or logging in by automatically timestamping the link. Compatible with 
