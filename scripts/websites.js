@@ -14,6 +14,28 @@ const websites = [
     domains: [
       "youtube.com",
       "youtube-nocookie.com",
+
+      // Piped instances
+      "piped.video",
+      "piped.tokhmi.xyz",
+      "piped.moomoo.me",
+      "piped.syncpundit.io",
+      "piped.mha.fi",
+      "watch.whatever.social",
+      "piped.garudalinux.org",
+      "y.rivo.lol",
+      "efy.piped.pages.dev",
+      "piped.daviteusz.eu",
+      "yt.jae.fi",
+      "il.ax",
+      "piped.esmailelbob.xyz",
+      "piped.projectsegfau.lt",
+      "piped.privacydev.net",
+      "piped.palveluntarjoaja.eu",
+      "piped.smnz.de",
+      "piped.adminforge.de",
+      "piped.qdi.fi",
+
       // Invidious instances
       "yewtu.be",
       "invidious.snopyta.org",
