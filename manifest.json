@@ -38,6 +38,7 @@
         "*://*.youtube-nocookie.com/*",
         "*://*.vidlii.com/*",
         "*://tube.cadence.moe/*",
+        "*://*.utreon.com/*"
       ],
       "js": ["options/defaults.js",
              "scripts/websites.js",

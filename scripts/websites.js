@@ -193,5 +193,17 @@ const websites = [
       parameter: "t",
       format: "hms"
     }]
+  },
+  { id: "utreon",
+    domains: ["utreon.com"],
+    methods: [{
+      paths: ["/v/"],
+      type: "query",
+      parameter: "t",
+      format: "seconds"
+    }],
+    adPlaying: () => {
+      return document.getElementsByClassName("ad-skip-link")[0];
+    }
   }
 ];
