@@ -184,5 +184,14 @@ const websites = [
       parameter: "t",
       format: "seconds"
     }]
+  },
+  { id: "cloudtube",
+    domains: ["tube.cadence.moe"],
+    methods: [{
+      paths: ["/watch"],
+      type: "query",
+      parameter: "t",
+      format: "hms"
+    }]
   }
 ];

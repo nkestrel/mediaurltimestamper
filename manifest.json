@@ -36,7 +36,8 @@
         "*://*.bittube.video/*",
         "*://*.invidio.us/*",
         "*://*.youtube-nocookie.com/*",
-        "*://*.vidlii.com/*"
+        "*://*.vidlii.com/*",
+        "*://tube.cadence.moe/*",
       ],
       "js": ["options/defaults.js",
              "scripts/websites.js",
