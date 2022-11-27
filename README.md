@@ -15,8 +15,9 @@ This timestamped URL, also known as a deep link, can then be handled by the
 browser's session, history, bookmarks, sync service, share services etc. 
 Anywhere the link goes the timestamp conveniently goes with it.
 
-**Supported websites**: Youtube, SoundCloud, Vimeo, Twitch, DailyMotion, PBS, 
-Hearthis.at, Invidious, HookTube, FramaTube (PeerTube site), BitTube, Vidlii.
+**Supported websites**: Youtube, SoundCloud, Twitch, Invidious, Piped,
+Odysee (LBRY), Librarian, DailyMotion, Vimeo, PBS, Hearthis.at, PeerTube,
+Vidlii, CloudTube, Utreon.
 
 Some of these websites already have resume capabilities but require cookies 
 or local storage to be retained. Some also need you to be logged in with 
