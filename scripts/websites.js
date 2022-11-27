@@ -185,6 +185,27 @@ const websites = [
       format: "seconds"
     }]
   },
+  { id: "lbry",
+    domains: [
+      "odysee.com",
+      "lbry.bcow.xyz",
+      "odysee.076.ne.jp",
+      "librarian.pussthecat.org",
+      "lbry.projectsegfau.lt",
+      "librarian.esmailelbob.xyz",
+      "lbry.vern.cc",
+      "lbry.slipfox.xyz",
+      "lbry.sytes.net",
+      "lbry.webhop.me",
+      "lbry.mywire.org"
+    ],
+    methods: [{
+      paths: ["/@"],
+      type: "query",
+      parameter: "t",
+      format: "seconds"
+    }]
+  },
   { id: "cloudtube",
     domains: ["tube.cadence.moe"],
     methods: [{

@@ -38,7 +38,19 @@
         "*://*.youtube-nocookie.com/*",
         "*://*.vidlii.com/*",
         "*://tube.cadence.moe/*",
-        "*://*.utreon.com/*"
+        "*://*.utreon.com/*",
+
+        "*://*.odysee.com/*",
+        "*://lbry.bcow.xyz/*",
+        "*://odysee.076.ne.jp/*",
+        "*://librarian.pussthecat.org/*",
+        "*://lbry.projectsegfau.lt/*",
+        "*://librarian.esmailelbob.xyz/*",
+        "*://lbry.vern.cc/*",
+        "*://lbry.slipfox.xyz/*",
+        "*://lbry.sytes.net/*",
+        "*://lbry.webhop.me/*",
+        "*://lbry.mywire.org/*"
       ],
       "js": ["options/defaults.js",
              "scripts/websites.js",
