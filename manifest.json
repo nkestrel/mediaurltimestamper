@@ -47,8 +47,7 @@
     },
     {
       "matches": [
-        "*://*.pbs.org/*",
-        "*://*.hooktube.com/*"
+        "*://*.pbs.org/*"
       ],
       "js": ["options/defaults.js",
              "scripts/websites.js",
@@ -56,9 +55,9 @@
       "run_at": "document_end"
     },
     {
-      "matches": ["*://*.pbs.org/portalplayer/*",
-                  "*://*.youtube.com/embed/*",
-                  "*://*.invidio.us/embed/*"],
+      "matches": [
+        "*://*.pbs.org/portalplayer/*"
+      ],
       "js": ["scripts/websites.js",
              "scripts/mediaframe.js"],
       "run_at": "document_end",
