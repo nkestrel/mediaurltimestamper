@@ -167,9 +167,9 @@ function updateTimestamp(timeString) {
     window.history.replaceState(window.history.state, "", newPath);
     // Need to reshow pageAction after replacing history.
     updatePageAction();
-    // Remove old timestamp URL from global history to avoid spam but keep
-    // initial URL so links are still marked as visited.
-    if (oldURL != initialLocation) {
+    // Remove old timestamp URL from global history to avoid spam but
+    // optionally keep initial URL so links are still marked as visited.
+    if (!options.keepOriginalVisited || oldURL != initialLocation) {
       browser.runtime.sendMessage({action: "historyDeleteUrl", url: oldURL});
     }
     // Update current location so it is not detected as a location change

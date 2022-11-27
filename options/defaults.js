@@ -2,6 +2,7 @@
 
 var defaultOptions = {
   "showPageAction":              true,
+  "keepOriginalVisited":         true,
   "automaticTimestamp":          true,
   "minimumDurationMin":          "10",
   "pollIntervalSec":             60,

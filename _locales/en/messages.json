@@ -26,6 +26,9 @@
   "options_showPageAction": {
     "message": "Show page action in location bar"
   },
+  "options_keepOriginalVisited": {
+    "message": "Keep original URL in history so links still appear as visited"
+  },
   "options_automaticTimestamp": {
     "message": "Automatic mode enabled globally by default"
   },
