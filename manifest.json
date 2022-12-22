@@ -30,6 +30,14 @@
     {
       "matches": [
         "*://*.youtube.com/*",
+        "*://*.twitch.tv/*",
+        "*://*.facebook.com/*",
+        "*://*.soundcloud.com/*",
+        "*://*.vimeo.com/*",
+        "*://*.hearthis.at/*",
+        "*://*.vidlii.com/*",
+        "*://tube.cadence.moe/*",
+        "*://*.utreon.com/*",
         "*://*.youtube-nocookie.com/*",
 
         "*://*.piped.video/*",
@@ -52,7 +60,7 @@
         "*://piped.adminforge.de/*",
         "*://piped.qdi.fi/*",
 
-        "*://yewtu.be/*",
+        "*://*.yewtu.be/*",
         "*://invidious.snopyta.org/*",
         "*://inv.riverside.rocks/*",
         "*://vid.puffyan.us/*",
@@ -74,15 +82,6 @@
         "*://youtube.076.ne.jp/*",
         "*://invidious.tiekoetter.com/*",
         "*://invidious.slipfox.xyz/*",
-
-        "*://*.soundcloud.com/*",
-        "*://*.vimeo.com/*",
-        "*://*.twitch.tv/*",
-        "*://*.facebook.com/*",
-        "*://*.hearthis.at/*",
-        "*://*.vidlii.com/*",
-        "*://tube.cadence.moe/*",
-        "*://*.utreon.com/*",
 
         "*://*.framatube.org/*",
         "*://*.bittube.video/*",
