@@ -17,9 +17,9 @@ This timestamped URL, also known as a deep link, can then be handled by the
 browser's session, history, bookmarks, sync service, share services etc. 
 Anywhere the link goes the timestamp conveniently goes with it.
 
-**Supported websites**: Youtube, SoundCloud, Twitch, Invidious, Piped,
-Odysee (LBRY), Librarian, DailyMotion, Vimeo, PBS, Hearthis.at, PeerTube,
-Vidlii, CloudTube, Utreon.
+**Supported websites**: Youtube, Twitch, Facebook, SoundCloud, DailyMotion,
+Vimeo, Crunchyroll, VK, Niconico, Aparat, Odysee (LBRY), Hearthis.at, Invidious,
+Piped, Librarian, PBS, PeerTube, Vidlii, CloudTube, Utreon.
 
 Some of these websites already have resume capabilities but require cookies 
 or local storage to be retained. Some also need you to be logged in with 
@@ -73,15 +73,16 @@ resume.
 
 | Parameter       | Count |
 |-----------------|-------|
-| &t              | 6     |
+| &t              | 10    |
 | #t              | 4     |
 | &start          | 4     |
 | &time_continue  | 1     |
+| &from           | 1     |
 
 | Units     | Count |
 |-----------|-------|
-| Seconds   | 7     |
-| H/M/S     | 6     |
+| Seconds   | 11    |
+| H/M/S     | 7     |
 
 Youtube alternative frontends like Invidious that use the same parameters 
 for compatibility reasons are excluded from the count.
