@@ -20,8 +20,10 @@
   },
 
   "background": {
-    "scripts": ["options/defaults.js",
-                "scripts/background.js"]
+    "scripts": [
+      "options/defaults.js",
+      "scripts/background.js"
+    ]
   },
 
   "content_scripts": [
@@ -99,10 +101,12 @@
         "*://lbry.webhop.me/*",
         "*://lbry.mywire.org/*"
       ],
-      "js": ["options/defaults.js",
-             "scripts/websites.js",
-             "scripts/content.js",
-             "scripts/mediaframe.js"],
+      "js": [
+        "options/defaults.js",
+        "scripts/websites.js",
+        "scripts/content.js",
+        "scripts/mediaframe.js"
+      ],
       "run_at": "document_end"
     },
     {
@@ -111,9 +115,11 @@
         "*://*.dailymotion.com/*",
         "*://*.crunchyroll.com/*"
       ],
-      "js": ["options/defaults.js",
-             "scripts/websites.js",
-             "scripts/content.js"],
+      "js": [
+        "options/defaults.js",
+        "scripts/websites.js",
+        "scripts/content.js"
+      ],
       "run_at": "document_end"
     },
     {
@@ -122,8 +128,10 @@
         "*://*.dailymotion.com/embed*",
         "*://static.crunchyroll.com/*"
       ],
-      "js": ["scripts/websites.js",
-             "scripts/mediaframe.js"],
+      "js": [
+        "scripts/websites.js",
+        "scripts/mediaframe.js"
+      ],
       "run_at": "document_end",
       "all_frames": true
     }
@@ -141,8 +149,9 @@
     "browser_style": true
   },
 
-  "permissions": ["history",
-                  "storage",
-                  "contextMenus"]
-
+  "permissions": [
+    "history",
+    "storage",
+    "contextMenus"
+  ]
 }
