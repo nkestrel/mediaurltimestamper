@@ -24,13 +24,16 @@
     "message": "Automatic mode"
   },
   "options_showPageAction": {
-    "message": "Show page action in location bar"
+    "message": "Show icon in address bar"
   },
   "options_keepOriginalVisited": {
     "message": "Keep original URL in history so links still appear as visited"
   },
   "options_automaticTimestamp": {
     "message": "Automatic mode enabled globally by default"
+  },
+  "options_title_automaticMode": {
+    "message": "Automatic mode settings"
   },
   "options_minimumDurationMin": {
     "message": "Minimum media duration:"

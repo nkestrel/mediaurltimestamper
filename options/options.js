@@ -73,6 +73,11 @@ for (let label of labels) {
   }
 }
 
+let titles = document.getElementsByClassName("text-section-header");
+for (let title of titles) {
+  title.textContent = browser.i18n.getMessage("options_" + title.id);
+}
+
 let inputs = document.querySelectorAll("input, select");
 for (let input of inputs) {
   input.addEventListener("input", saveOption);

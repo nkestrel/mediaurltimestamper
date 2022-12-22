@@ -2,20 +2,26 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="chrome://browser/content/extension.css">
     <link rel="stylesheet" href="tweaks.css">
   </head>
   <body>
     <div class="panel">
-      <div class="checkboxItem">
-        <input id="showPageAction" type="checkbox" name="showPageAction"><label for="showPageAction"/>
-      </div>
-      <div class="checkboxItem">
-        <input id="keepOriginalVisited" type="checkbox" name="keepOriginalVisited"><label for="keepOriginalVisited"/>
-      </div>
-      <div class="checkboxItem">
-        <input id="automaticTimestamp" type="checkbox" name="automaticTimestamp"><label for="automaticTimestamp"/>
+      <div class="panel-section panel-section-formElements">
+        <div class="checkboxItem">
+          <input id="showPageAction" type="checkbox" name="showPageAction"><label for="showPageAction"/>
+        </div>
+        <div class="checkboxItem">
+          <input id="keepOriginalVisited" type="checkbox" name="keepOriginalVisited"><label for="keepOriginalVisited"/>
+        </div>
+        <div class="checkboxItem">
+          <input id="automaticTimestamp" type="checkbox" name="automaticTimestamp"><label for="automaticTimestamp"/>
+        </div>
       </div>
       <div id="automaticPanel" class="panel">
+        <div class="panel-section-header">
+          <div id="title_automaticMode" class="text-section-header"></div>
+        </div>
         <div class="panel-section panel-section-formElements">
           <div class="panel-formElements-item">
             <label for="minimumDurationMin"></label><input id="minimumDurationMin" type="number" name="minimumDurationMin" min="0" step="1" required><label for="minutes"></label>
@@ -31,7 +37,11 @@
           </div>
         </div>
       </div>
-      <input id="btndefault" type="button">
+      <div class="panel-section panel-section-formElements">
+        <div class="panel-formElements-item">
+          <input id="btndefault" type="button">
+        </div>
+      </div>
     </div>
     <script src="defaults.js"></script>
     <script src="options.js"></script>
