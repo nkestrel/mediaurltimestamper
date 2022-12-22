@@ -35,6 +35,7 @@
         "*://*.soundcloud.com/*",
         "*://*.vimeo.com/*",
         "*://*.vk.com/*",
+        "*://*.nicovideo.jp/*",
         "*://*.hearthis.at/*",
         "*://*.vidlii.com/*",
         "*://tube.cadence.moe/*",

@@ -301,5 +301,14 @@ const websites = [
       parameter: "t",
       format: "hms"
     }]
+  },
+  { id: "niconico",
+    domains: ["nicovideo.jp"],
+    methods: [{
+      paths: ["/watch/"],
+      type: "query",
+      parameter: "from",
+      format: "seconds"
+    }]
   }
 ];
