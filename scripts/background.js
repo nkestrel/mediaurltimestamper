@@ -8,6 +8,8 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
 
+"use strict";
+
 browser.runtime.onMessage.addListener(function(message, sender) {
   switch (message.action) {
     case ("historyDeleteUrl"):
