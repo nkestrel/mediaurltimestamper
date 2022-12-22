@@ -292,5 +292,14 @@ const websites = [
       parameter: "t",
       format: "seconds"
     }]
+  },
+  { id: "vk",
+    domains: ["vk.com"],
+    methods: [{
+      paths: ["/video-"],
+      type: "query",
+      parameter: "t",
+      format: "hms"
+    }]
   }
 ];
