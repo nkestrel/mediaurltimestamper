@@ -78,6 +78,7 @@
         "*://*.soundcloud.com/*",
         "*://*.vimeo.com/*",
         "*://*.twitch.tv/*",
+        "*://*.facebook.com/*",
         "*://*.hearthis.at/*",
         "*://*.vidlii.com/*",
         "*://tube.cadence.moe/*",

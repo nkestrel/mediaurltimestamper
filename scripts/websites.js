@@ -283,5 +283,14 @@ const websites = [
       parameter: "t",
       format: "seconds"
     }]
+  },
+  { id: "facebook",
+    domains: ["facebook.com"],
+    methods: [{
+      paths: ["/*/videos/*"],
+      type: "query",
+      parameter: "t",
+      format: "seconds"
+    }]
   }
 ];
