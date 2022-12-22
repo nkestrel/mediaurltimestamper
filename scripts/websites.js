@@ -310,5 +310,14 @@ const websites = [
       parameter: "from",
       format: "seconds"
     }]
+  },
+  { id: "aparat",
+    domains: ["aparat.com"],
+    methods: [{
+      paths: ["/v/"],
+      type: "query",
+      parameter: "t",
+      format: "seconds"
+    }]
   }
 ];
