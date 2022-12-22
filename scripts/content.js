@@ -243,7 +243,7 @@ browser.storage.local.get(defaultOptions).then((items) => {
 
 browser.storage.onChanged.addListener(function(changes, areaName) {
   let changedItems = Object.keys(changes);
-  for (item of changedItems) {
+  for (let item of changedItems) {
     let value = changes[item].newValue;
     if (typeof value === "undefined") {
       value = defaultOptions[item];
