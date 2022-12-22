@@ -108,7 +108,8 @@
     {
       "matches": [
         "*://*.pbs.org/*",
-        "*://*.dailymotion.com/*"
+        "*://*.dailymotion.com/*",
+        "*://*.crunchyroll.com/*"
       ],
       "js": ["options/defaults.js",
              "scripts/websites.js",
@@ -118,7 +119,8 @@
     {
       "matches": [
         "*://*.pbs.org/portalplayer/*",
-        "*://*.dailymotion.com/embed*"
+        "*://*.dailymotion.com/embed*",
+        "*://static.crunchyroll.com/*"
       ],
       "js": ["scripts/websites.js",
              "scripts/mediaframe.js"],

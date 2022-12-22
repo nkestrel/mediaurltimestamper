@@ -274,5 +274,14 @@ const websites = [
     adPlaying: () => {
       return document.getElementsByClassName("ad-skip-link")[0];
     }
+  },
+  { id: "crunchyroll",
+    domains: ["crunchyroll.com"],
+    methods: [{
+      paths: ["/watch/"],
+      type: "query",
+      parameter: "t",
+      format: "seconds"
+    }]
   }
 ];
