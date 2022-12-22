@@ -30,15 +30,22 @@ function getMediaTime(force, currentSite) {
     if (typeof currentSite.getTimeAndDuration != "undefined") {
       result = currentSite.getTimeAndDuration();
     } else {
-      let video;
+      let mainVideo;
       if (typeof currentSite.getVideo != "undefined") {
-        video = currentSite.getVideo();
+        mainVideo = currentSite.getVideo();
       } else {
-        video = document.getElementsByTagName("video")[0];
+        let videos = document.getElementsByTagName("video");
+        for (let video of videos) {
+          // Assume longest video is main content
+          if (!isNaN(video.duration) &&
+              (!mainVideo || video.duration > mainVideo.duration)) {
+            mainVideo = video;
+          }
+        }
       }
-      if (video) {
-        result.timeSec = video.currentTime;
-        result.durationSec = video.duration;
+      if (mainVideo) {
+        result.timeSec = mainVideo.currentTime;
+        result.durationSec = mainVideo.duration;
       }
     }
   }
