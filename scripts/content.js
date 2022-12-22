@@ -180,10 +180,28 @@ function updateTimestamp(timeString) {
 }
 
 function isValidPath(paths) {
+  const segments = window.location.pathname.replace(/^\/|\/$/g, '').split("/");
   for (let path of paths) {
-    if (window.location.pathname.startsWith(path)) {
+    if (["","/"].includes(path))
       return true;
+    let patterns = path.replace(/^\/|\/$/g, '').split("/");
+    if (patterns.length > segments.length)
+      break;
+    let match = true;
+    for (let i = 0; i < patterns.length; i++) {
+      // Wildcard matching for path segments, last segment only needs to match
+      // start when not closed with trailing slash.
+      if (patterns[i] != "*") {
+        if (i == patterns.length - 1 && !path.endsWith("/"))
+          match = segments[i].startsWith(patterns[i]);
+        else
+          match = segments[i] == patterns[i];
+      }
+      if (!match)
+        break;
     }
+    if (match)
+      return true;
   }
   return false;
 }
