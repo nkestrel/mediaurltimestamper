@@ -35,7 +35,7 @@ function saveOption(e) {
 }
 
 function restoreOptions(event) {
-  browser.storage.local.get(defaultOptions).then((results) => {
+  const handleResults = (results) => {
     for (let key of Object.keys(results)) {
       let value = results[key];
       for (let el of document.getElementsByName(key)) {
@@ -54,7 +54,9 @@ function restoreOptions(event) {
         }
       }
     }
-  });
+  };
+
+  IS_CHROME ? browser.storage.local.get(defaultOptions, handleResults) : browser.storage.local.get(defaultOptions).then(handleResults);
 }
 
 function restoreDefaults() {

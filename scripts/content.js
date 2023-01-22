@@ -249,7 +249,7 @@ browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
   }
 });
 
-browser.storage.local.get(defaultOptions).then((items) => {
+const setupItems = (items) => {
   // Firefox 51 and below have items inside items[0]
   if (Array.isArray(items)) {
     options = items[0];
@@ -257,7 +257,9 @@ browser.storage.local.get(defaultOptions).then((items) => {
     options = items;
   }
   setupOptions();
-});
+}
+
+IS_CHROME ? browser.storage.local.get(defaultOptions, setupItems) : browser.storage.local.get(defaultOptions).then(setupItems);
 
 browser.storage.onChanged.addListener(function(changes, areaName) {
   let changedItems = Object.keys(changes);
